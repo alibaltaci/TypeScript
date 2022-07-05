@@ -37,7 +37,22 @@ let a = "Ali";
 
 // a = 3;
 
-console.log(a);
+
+// Type Assention
+
+let helloMessage;
+
+helloMessage = "Hello";
+
+// way-1:
+const newHelloMessage = (<string>helloMessage).toLocaleLowerCase();
+console.log(newHelloMessage);
+
+// way-2:
+const newNewHelloMessage = (helloMessage as string).toUpperCase();
+console.log(newHelloMessage, newNewHelloMessage);
+
+
 
 
 

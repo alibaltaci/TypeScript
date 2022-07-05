@@ -282,6 +282,40 @@ a = notSure
 
 ```
 
+---
+---
+---
+
+# Type Assertions 
+
+TypeScript 'in hatalı olarak kabul edeceği bir değişken oluşturma işlemi yapığımızı ama bunun farkında olduğumuzu varsayalım. Yaptığımız hatalı değişken oluşturma işleminden sonra değişkenimize farklı tipte bir değer atayalım ve bu tipin özelliklerini kullanmak istediğimizi varsayalım. Bunu Type Assertion ile yaparız.
+
+
+
+```
+let message;  (any)
+
+message = "Hello";
+
+```
+
+Yöntem - 1:
+
+```
+const newMessage = (<string>message).toLowerCase();
+```
+
+Yöntem - 2:
+
+```
+const newNewHelloMessage = (message as string).toLowerCase();
+```
+
+Yukarıdaki işlem ile TS 'yi susturmuş oluyoruz.
+
+Farklı tipte tanımlanmış değişkenleri bu şekilde kullanamayız. Durum Any için geçerlidir.
+
+
 
 
 

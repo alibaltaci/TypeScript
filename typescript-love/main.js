@@ -26,5 +26,13 @@ var copyMyArray = __spreadArray([], myArray, true);
 // #####################################
 // TS Veri Tipleri
 var a = "Ali";
-a = "a";
-console.log(a);
+// a = 3;
+// Type Assention
+var helloMessage;
+helloMessage = "Hello";
+// way-1:
+var newHelloMessage = helloMessage.toLocaleLowerCase();
+console.log(newHelloMessage);
+// way-2:
+var newNewHelloMessage = helloMessage.toUpperCase();
+console.log(newHelloMessage, newNewHelloMessage);

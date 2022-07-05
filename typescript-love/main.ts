@@ -53,6 +53,12 @@ const newNewHelloMessage = (helloMessage as string).toUpperCase();
 console.log(newHelloMessage, newNewHelloMessage);
 
 
+// Object Type
 
+let user = {
+    name: "Ali",
+    age: 25,
+    langs: ["Python", "JavaScript", "TypeScript", 5],
+}
 
 

@@ -315,6 +315,31 @@ Yukarıdaki işlem ile TS 'yi susturmuş oluyoruz.
 
 Farklı tipte tanımlanmış değişkenleri bu şekilde kullanamayız. Durum Any için geçerlidir.
 
+---
+---
+---
+
+# Object Type
+
+````
+let user = {
+    name: "Ali",
+    age: 25,
+    langs: ["Python", "JavaScript", "TypeScript", 5],
+}
+````
+
+TS Type Inference sayesinde aşağıdaki gibi bir obje üretir. -->
+
+```
+let user: {
+    name: string;
+    age: number;
+    langs: (string | number)[];
+}
+```
+
+Bu bir TS objesidir. JS objesi olsa ; yerine , olurdu.
 
 
 

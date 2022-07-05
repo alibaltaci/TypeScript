@@ -12,4 +12,3 @@ cmd --> `` type nul > <foldername.ext> ``
 
 cmd --> `` cls ``
 
-

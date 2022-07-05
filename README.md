@@ -100,3 +100,190 @@ JavaScript file (*.js) (Runs everywhere)
 * Takım üyeleri static yazım dillerine alışkınsa.
 
 * Bir kütüphane veya framework TS 'yi öerdiğinde (Angulas.js).
+
+---
+---
+---
+
+# TS kodlarını derleyici yardımı ile JS 'ye çevirme (compile) (to ES5)
+
+cmd --> `` tsc main.ts main.js `` ya da sadece `` tsc main.ts ``
+
+* İşlemden sonra iki dosya da aynı anda açık olursa, benzer fonksiyonlar kullanıldığı için hata gösterir. Biri kapatıldığı anda hata gider. 
+
+* JS dosyamızı çalıştıralım
+
+cmd --> `` node main.js ``
+
+# JavaScript Version
+
+* ES5 (Supported by all browsers).
+
+* ES6 (2015) Arrows, classes, template strings ( `` ), let... const... [...array]
+
+* ES7 ES2016 Array.prototype.includes
+
+* ES8 ES2017
+
+# ES Versiyon farklılıklarını .ts ve .js dosyaları üzerinde gözlemleyelim
+
+### TS dosyamızda ES6 ile gelen template string 'i kullanacağız 
+
+*main.ts*  -->
+
+```
+const myName = "ali";
+const myWord = `Ben ${myName}`;
+```
+
+*main.js*  --> 
+
+```
+var myName = "ali";
+var myWord = "Ben ".concat(myName);
+```
+
+## Array Kopyalayalım [...Array]
+
+```
+const myArray = ["Python", "JavaScript", "TypeScript"];
+
+const copyMyArray = [...myArray];
+```
+
+ to ES5 ===>
+
+```
+var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+};
+
+var myArray = ["Python", "JavaScript", "TypeScript"];
+var copyMyArray = __spreadArray([], myArray, true);
+```
+
+---
+---
+---
+
+# TypeScript Veri Tipleri
+
+* @typeAnnotations :type
+* Any
+* Number
+* String 
+* Boolean
+* Arrays string[], number[], any[]
+* Enum
+* Tuple [type1, type2]
+* unknown
+* TYPE INFERENCE?
+
+TypeScript static typing 'e sahip olduğu için, bir değişkene hangi değeri atarsak program içinde hep aynı tiple kullanılmaya devam eder.
+
+
+```
+let a = "Ali";
+
+a = 3;  --> Type 'number' is not assignable to type 'string'.
+
+```
+
+Farklı tip bir değer atamaya çalışırsak yukarıdaki hatayı alırız.
+
+Aynı tip değer atanarak değişkenin değeri değiştirilebilir.
+
+Derleme işlemine hataya rağmen devem etmek istersek uyarı alırız fakat bu durum derlemeyi durdurmaz ve kodumuz JS 'ye derlenir.
+
+JS 'de Dynamic Typing kullanıldığı için tip dönüşümleri yapmak mümkündür. Dikkat edilmesi lazım.
+
+## Any
+
+``let a;``
+
+Bu tür bir atamada a değeri any değerinde olsa bile sonraki atamalarda da aynı kalmaya devam eder.
+
+## @typeAnnotations 
+
+* Değişkenin Tipini belirtip sonradan değer ataması yapabiliriz. Buna typeAnnotation denir. Bu işlemi semi colon " : " yardımı ile yaparız.
+
+```
+let a: string;
+
+a = "Ali";
+ ```
+
+ ## TYPE INFERENCE
+
+Aşağıdaki kullanım yanlış değildir fakat manasızdır. Değişkene atama yapılırken atanan verinin tipine göre değer alır. Buna TYPE INFERENCE denir.
+
+```
+let a: string = "Ali";
+```
+
+Oluşturulan değişkene değer ataması hemen yapılmayacaksa, değişken oluşturulduğu anda tip tanımlaması yapılabilir (@typeAnnotations). Tanımlama yapılmazsa any olarak alğılanır ve TS 'nin kafası karışır.
+
+`` let a: number; ``
+
+## enum
+
+```
+enum Color {Purple, Black, Blue, Red};
+
+let bgColor = Color. --> {Purple, Black, Blue, Red}
+```
+
+Color değişkenini farklı içinde barındırdığı farklı değerler yeniden tanımlayabiliriz.
+
+```
+bgColor = Color.Black;
+```
+
+## Tuple 
+
+ Bir Array değişkenimiz varsa ve array içindeki elmanların sırası ile tipleri belli ise, array tanımlandığı anda aşağıdaki gibi bir atama yapılabilir.
+
+ ```
+ let error: [string, number];
+
+ error = ["Not found", 404];
+ ```
+
+## unknown
+
+Değişkenimizi oluştururken tipini unknown yapıp sonrasında rahatlıkla tipi farklı olan değerleri atayabiliriz. Any ' e göre daha sağlıklı bir yöntemdir.
+
+``` 
+let notSure: unknown;
+
+notSure = "Ali";
+notSure = 42;
+notSure = true;
+notSure = ["asdf", "rewq"];
+
+```
+
+Kendince katı kuralları vardır. Bir tipe sahip olan bir değişken unknıown 'a atayamazsınız.
+
+Aşağıdaki kullanım hatalıdır.
+
+```
+let a = true;
+
+let notSure: unknown;
+
+a = notSure
+
+```
+
+
+
+
+
+

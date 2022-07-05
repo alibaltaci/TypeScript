@@ -29,4 +29,15 @@ const myArray = ["Python", "JavaScript", "TypeScript"];
 const copyMyArray = [...myArray];
 
 
+// #####################################
+
+// TS Veri Tipleri
+
+let a = "Ali";
+
+// a = 3;
+
+console.log(a);
+
+
 

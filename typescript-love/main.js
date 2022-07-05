@@ -23,3 +23,8 @@ var myWord = "Ben ".concat(myName);
 // Array Kopyalayalım [...Array]
 var myArray = ["Python", "JavaScript", "TypeScript"];
 var copyMyArray = __spreadArray([], myArray, true);
+// #####################################
+// TS Veri Tipleri
+var a = "Ali";
+a = "a";
+console.log(a);

@@ -36,3 +36,20 @@ console.log(newHelloMessage);
 // way-2:
 var newNewHelloMessage = helloMessage.toUpperCase();
 console.log(newHelloMessage, newNewHelloMessage);
+// Object Type
+var user = {
+    name: "Ali",
+    age: 25,
+    langs: ["Python", "JavaScript", "TypeScript", 5]
+};
+var newUnionObject;
+newUnionObject = {
+    name: "ali",
+    age: 22,
+    role: "user",
+    color: {
+        name: "black",
+        hex: "#000"
+    }
+};
+console.log(newUnionObject);

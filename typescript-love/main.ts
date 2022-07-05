@@ -62,3 +62,35 @@ let user = {
 }
 
 
+// Union Type ? 
+
+type Color = {
+    name: "black" | "white";
+    hex: string;
+};
+
+type unionObject = {
+    name: string;
+    age: number | string;
+    role: "admin" | "user";
+    color: Color;
+};
+
+let newUnionObject: unionObject;
+
+newUnionObject = {
+    name: "ali",
+    age: 22,
+    role: "user",
+    color: {
+        name: "black",
+        hex: "#000",
+    },
+};
+
+console.log(newUnionObject);
+
+
+
+
+

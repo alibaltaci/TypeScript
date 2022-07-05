@@ -342,7 +342,77 @@ let user: {
 Bu bir TS objesidir. JS objesi olsa ; yerine , olurdu.
 
 
+---
+---
+---
 
+# Union Type
 
+Bir değişkenimiz iki farklı veri tipinde değer alabilir demek istersek bunu **pipe** " | " yardımı ile yapıyoruz.
+
+```
+let unionObject: {
+    name: string;
+    age: number | string;
+};
+
+unionObject.age = 25;
+
+```
+
+# Literal Type
+
+Değişkene kesin tip atama.
+
+```
+let unionObject: {
+    name: string;
+    age: number | string;
+    role: "admin" | "user";
+};
+
+unionObject.role = "user"; / "admin";
+```
+
+role kısmına sadece string değer ataması değil orada yazması gereken değeri de direkt olarak belirttik. Bunu diğer veri tipleri için de yapabiliriz.
+
+# Custom Type
+
+```
+type Color = {
+    name: "black" | "white";
+    hex: string;
+};
+
+let unionObject: {
+    name: string;
+    age: number | string;
+    role: "admin" | "user";
+    color: Color;
+};
+
+unionObject.color.name = "black";
+unionObject.color.hex = "#000";
+```
+
+Birden fazla custom type
+
+```
+type Color = {
+    name: "black" | "white";
+    hex: string;
+};
+
+type unionObject = {
+    name: string;
+    age: number | string;
+    role: "admin" | "user";
+    color: Color;
+};
+
+let newUnionObject: unionObject;
+```
+
+* Bu bölümdeki type 'lar TS 'ye özeldir. JS 'de derlenmezler.
 
 

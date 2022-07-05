@@ -40,5 +40,63 @@ Herhangi bir x programlama dili y programlama dilinin superset 'i ise, x dilinin
 
 * Değişken tipleri program içerisinde değiştirilebilir.
 
+# TypeScript Avantajları
 
+* Erken tespit edilen hatalar (compile time).
 
+* Predictability (Tahmin edilebilirlik). Bunu sağlamasının sebebi, Static yazım tipine sahip olduğu için programımız içerisinde her bir değişkenin tipinin önceden belli olması. Tipi tanımlanan değişken aynı tipte devam edecek. Bu durum bize tahmin edilebilirlik kazandırır.
+
+* JS 'ye dahil olmayan OOP (Class, Interface, Inheritance...) özelliklerini kullananabiliriz.
+
+* More Types. JS tiplerine yeni tipler sağlar. Bu tipler çok daha spesifik tiplerdir. 
+
+* Browser Compatability (Tarayıcı Uyumluluğu) (ES7 - ES6 ile yeni özellikleri kullanıp bunların ES5 'e dönüştürülmesi).
+
+# TypeScript Özellikleri
+
+1. Geçerli bir JS kodu aynı zamanda bir TS kodudur. .JS uzantısını .TS 'ye çevirmeniz yeterli olacaktır. (Kapsayıcı Küme)
+
+2. TS her yerde kullanılabilir. Browser, Mobil Cihazlar, herhangi bir işletim sistemi.
+
+3. TS JS kütüphaneleri ile birlikte kullanılabilir. Geliştiriciler var olan JS kodunu değiştirmeden kullanabilirler. JS ve TS uzantılı dosyala aynı projede kullanılabilirler. (bkz. madde 1)
+
+4. Hata mesajlarını development zamanında verir. (Bkz. Static Type)
+
+# TypeScript Dezavantajı
+
+* Tarayıcılar TypeScript kodunu anlayamazlar. Bu yüzden TS kodu bir derleyici yardımı ile JS koduna derlenir.
+
+-----
+
+|TypeScript Code
+-----------------
+
+ TypeScript file (*.ts) (Classes, Interface, Modules, Types) 
+
+----> 
+
+|Compilation / Transpiling (Derleme / Aktarma)
+--------------------------
+
+TypeScript Compiler (tsc) (Target: ES3 / ES5 /ES6 ...)
+
+----> 
+
+|Vanilla* JS Code 
+-----------------
+
+JavaScript file (*.js) (Runs everywhere)
+
+*“Vanilya JavaScript”, geliştiricilerin normal JavaScript'i tanımlamak için kullandıkları bir terimdir. Herhangi bir ek kütüphane veya framework(jquery,react,vue) olmadan dahili JavaScript yöntemlerini ve nesnelerini kullanmak anlamına gelir.
+
+----
+
+* Geliştirme aşamasına derleme süreci katar.
+
+# TypeScript 'i Ne Zaman Kullanmalıyız?
+
+* Büyük kod tabanlı çalışmalarda.
+
+* Takım üyeleri static yazım dillerine alışkınsa.
+
+* Bir kütüphane veya framework TS 'yi öerdiğinde (Angulas.js).

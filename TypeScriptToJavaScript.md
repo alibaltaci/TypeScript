@@ -8,6 +8,12 @@ cmd --> `` tsc main.ts main.js `` ya da sadece `` tsc main.ts ``
 
 cmd --> `` node main.js ``
 
+# Watch Mode
+
+Bu sayede .ts dosyamızda yaptığımız her değişiklik anlık olarak yakalanır ve .js dosyamıza derlenir.
+
+cmd --> `` tsc main.ts -w ``
+
 # JavaScript Version
 
 * ES5 (Supported by all browsers).

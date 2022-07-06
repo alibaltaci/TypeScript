@@ -115,6 +115,12 @@ cmd --> `` tsc main.ts main.js `` ya da sadece `` tsc main.ts ``
 
 cmd --> `` node main.js ``
 
+# Watch Mode
+
+Bu sayede .ts dosyamızda yaptığımız her değişiklik anlık olarak yakalanır ve .js dosyamıza derlenir.
+
+cmd --> `` tsc main.ts -w ``
+
 # JavaScript Version
 
 * ES5 (Supported by all browsers).
@@ -478,5 +484,95 @@ logUserDef("Ali");
 
 
 ```
+type Color2 = {
+    name: string;
+    hex: string;
+};
 
+const logUserType = (color: Color2) => {
+    console.log(color);
+};
+
+logUserType({
+    name: "Blue",
+    hex: "#000",
+});
+```
+
+---
+---
+---
+
+# Interfaces
+
+TS sayesinde OOP 'nin getirdiği özellikleri kullanabilriz. Interfaces bunlardan biridir.
+
+````
+interface Employee {
+    readonly empCode: number;
+    name: string;
+    age?: number;
+};
+
+let newEmployee: Employee;
+
+newEmployee = {
+    empCode: 1,
+    name: "Ali",
+};
+
+newEmployee.name = "dddd";
+
+// newEmployee.empCode = 11  //readonly
+````
+
+#  Extending Interfaces
+
+````
+interface Person {
+    name: string | number;
+    age?: number;
+};
+
+interface Employee2 extends Person {
+    empCode: number;
+    department: string;
+};
+
+let newEmployee2: Employee2;
+
+newEmployee2 = {
+    name: "Ali",
+    empCode: 42,
+    department: "IT",
+};
+
+console.log(newEmployee2);
+````
+
+# Implements 
+
+```
+interface IEmployee {
+    empCode: number;
+    name: string;
+    age: number;
+    getSalary: (number) => number;
+};
+
+class CEmployee implements IEmployee {
+    empCode: number;
+    name: string;
+    age: number;
+
+    constructor(employee: number, name: string, age: number) {};
+
+    getSalary = (empCode: number) => {
+        return 10000;
+    };
+};
+
+let newCEmployee = new CEmployee(42, "Ali", 99);
+
+console.log(newCEmployee.getSalary(1));
 ```

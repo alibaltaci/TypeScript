@@ -142,3 +142,70 @@ logUserType({
 });
 
 
+//  Interfaces
+
+interface Employee {
+    readonly empCode: number;
+    name: string;
+    age?: number;
+};
+
+let newEmployee: Employee;
+
+newEmployee = {
+    empCode: 1,
+    name: "Ali",
+};
+
+newEmployee.name = "dddd";
+
+// newEmployee.empCode = 11  //readonly
+
+//  Extending Interfaces
+
+interface Person {
+    name: string | number;
+    age?: number;
+};
+
+interface Employee2 extends Person {
+    empCode: number;
+    department: string;
+};
+
+let newEmployee2: Employee2;
+
+newEmployee2 = {
+    name: "Ali",
+    empCode: 42,
+    department: "IT",
+    age: 99,
+};
+
+console.log(newEmployee2);
+
+// ////////
+
+interface IEmployee {
+    empCode: number;
+    name: string;
+    age: number;
+    getSalary: (number) => number;
+};
+
+class CEmployee implements IEmployee {
+    empCode: number;
+    name: string;
+    age: number;
+
+    constructor(employee: number, name: string, age: number) {};
+
+    getSalary = (empCode: number) => {
+        return 10000;
+    };
+};
+
+let newCEmployee = new CEmployee(42, "Ali", 99);
+
+console.log(newCEmployee.getSalary(1));
+

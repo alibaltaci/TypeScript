@@ -82,3 +82,33 @@ logUserType({
     name: "Blue",
     hex: "#000"
 });
+;
+var newEmployee;
+newEmployee = {
+    empCode: 1,
+    name: "Ali"
+};
+newEmployee.name = "dddd";
+;
+;
+var newEmployee2;
+newEmployee2 = {
+    name: "Ali",
+    empCode: 42,
+    department: "IT",
+    age: 99
+};
+console.log(newEmployee2);
+;
+var CEmployee = /** @class */ (function () {
+    function CEmployee(employee, name, age) {
+        this.getSalary = function (empCode) {
+            return 10000;
+        };
+    }
+    ;
+    return CEmployee;
+}());
+;
+var newCEmployee = new CEmployee(42, "Ali", 99);
+console.log(newCEmployee.getSalary(1));

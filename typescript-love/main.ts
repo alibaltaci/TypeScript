@@ -91,6 +91,54 @@ newUnionObject = {
 console.log(newUnionObject);
 
 
+// Functions 
 
+// arrow func.
+const add = (num1: string, num2: string): string => {  //void
+    console.log(num1 + num2);
+    return num1 + num2;
+};
+
+add("3", "Ali");
+
+
+// Functions optional Params 
+
+const logUser = (firstname: string, lastname: string) => {
+    console.log(firstname + " " + lastname);
+};
+
+logUser("Ali", "Baltacı");
+
+const logUserOp = (firstname: string, lastname?: string) => {
+    console.log(firstname + " " + lastname);
+};
+
+logUserOp("Ali");
+
+
+// Functions Default
+
+const logUserDef = (firstname: string, lastname = "Yok") => {
+    console.log(firstname + " " + lastname);
+};
+
+logUserDef("Ali");
+
+// 
+
+type Color2 = {
+    name: string;
+    hex: string;
+};
+
+const logUserType = (color: Color2) => {
+    console.log(color);
+};
+
+logUserType({
+    name: "Blue",
+    hex: "#000",
+});
 
 

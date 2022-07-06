@@ -415,4 +415,68 @@ let newUnionObject: unionObject;
 
 * Bu bölümdeki type 'lar TS 'ye özeldir. JS 'de derlenmezler.
 
+---
+---
+---
 
+# Functions
+
+Fonksiyonun alacağı değerlerin tiplerini belirtebiliriz.
+
+Önceki bölümlerdeki tip özelliklerinin hepsi fonksiyon tanımlarken de kullanılabilir.
+
+```
+const add = (num1: string, num2: string) => {     //void
+    console.log(num1 + num2);
+};
+
+add("3", "Ali");
+```
+
+Aşağıdaki gibi return tipini belirtmek de mümkündür fakat özel bir neden yoksa buna gerek yok. Type Inference sayasinde fonksiyonun döneceği değerin tipini kendisi anlar. 
+
+Ayrıca return değeri verebilmemeiz için tanımlanan fonksiyonun bir return yapması lazım. Aksi takdirde hata alırız. Void bir return yapmıyor demektir.
+
+```
+const add = (num1: string, num2: string):string => { 
+    console.log(num1 + num2);
+    retrun num1 + num2;
+};
+
+add("3", "Ali");
+
+```
+
+## Optional Params
+
+Parametrenin sonuna ? konularak opsiyonel olduğu söylenebilir.
+
+```
+const logUser = (firstname: string, lastname: string) => {
+    console.log(firstname + " " + lastname);
+};
+
+logUser("Ali", "Baltacı");
+
+const logUserOp = (firstname: string, lastname?: string) => {
+    console.log(firstname + " " + lastname);
+};
+
+logUserOp("Ali");
+
+```
+
+## Default
+
+```
+const logUserDef = (firstname: string, lastname = "Yok") => {
+    console.log(firstname + " " + lastname);
+};
+
+logUserDef("Ali");
+```
+
+
+```
+
+```

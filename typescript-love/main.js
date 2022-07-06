@@ -53,3 +53,32 @@ newUnionObject = {
     }
 };
 console.log(newUnionObject);
+// Functions 
+// arrow func.
+var add = function (num1, num2) {
+    console.log(num1 + num2);
+    return num1 + num2;
+};
+add("3", "Ali");
+// Functions optional Params 
+var logUser = function (firstname, lastname) {
+    console.log(firstname + " " + lastname);
+};
+logUser("Ali", "Baltacı");
+var logUserOp = function (firstname, lastname) {
+    console.log(firstname + " " + lastname);
+};
+logUserOp("Ali");
+// Functions Default
+var logUserDef = function (firstname, lastname) {
+    if (lastname === void 0) { lastname = "Yok"; }
+    console.log(firstname + " " + lastname);
+};
+logUserDef("Ali");
+var logUserType = function (color) {
+    console.log(color);
+};
+logUserType({
+    name: "Blue",
+    hex: "#000"
+});

@@ -576,3 +576,5 @@ let newCEmployee = new CEmployee(42, "Ali", 99);
 
 console.log(newCEmployee.getSalary(1));
 ```
+
+# TypeScript with React 

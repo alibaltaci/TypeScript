@@ -6,26 +6,26 @@ export interface Person {
 }
 
 export interface PersonState {
-    person: Person[];
+    persons: Person[];
 }
 
 const initialState: PersonState = {
-    person: [],
+    persons: [],
 }
 
 export const PersonSlice = createSlice({
     name: 'person',
     initialState,
     reducers:{
-        addPerson: (state, action: PayloadAction<{ name: string }>) => {
-            state.person.push({
-                id: state.person.length,
+        _addPerson: (state, action: PayloadAction<{ name: string }>) => {
+            state.persons.push({
+                id: state.persons.length,
                 name: action.payload.name
             })
         }
     }
 })
 
-export const { addPerson } = PersonSlice.actions
+export const { _addPerson } = PersonSlice.actions
 
 export default PersonSlice.reducer

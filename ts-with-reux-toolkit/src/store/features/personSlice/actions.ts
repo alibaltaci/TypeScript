@@ -1,8 +1,14 @@
 import { _addPerson } from ".";
-import { store } from "../../store";
+import { useAppDispatch } from "../../hooks";
 
-interface AddPerson {
-    name: string;
-}
+export const useAddPersonDispatch = () => {
+    const dispatch = useAppDispatch();
+    
+    const addPerson = (name: string) => {
+      dispatch(_addPerson({ name }));
+    };
+  
+    return addPerson;
+  };
 
-export const AddPerson = (name:AddPerson) =>  store.dispatch(_addPerson(name))
+// export const addPerson = (name:AddPerson) =>  store.dispatch(_addPerson(name))

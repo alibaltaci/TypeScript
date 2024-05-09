@@ -1,12 +1,17 @@
-import { useRef } from "react"
-import { useAppDispatch } from "../store/hooks"
-import { _addPerson } from "../store/features/personSlice";
+import { MouseEvent, useRef } from "react"
+import { useAddPersonDispatch } from "../store/features/personSlice/actions";
 
 const Add = () => {
 
   const name = useRef<string>("")
 
-  const dispatch = useAppDispatch();
+  const addPerson = useAddPersonDispatch();
+
+  const handleSubmit = (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    addPerson( name.current )
+    // dispatch(_addPerson({name: name.current}))
+  }
 
   return (
     <form>
@@ -15,7 +20,8 @@ const Add = () => {
         onChange={ (e) => (name.current = e.target.value) }
       />
       <button
-        onClick={ () => dispatch(_addPerson( {name: name.current} )) }
+        onClick={ handleSubmit }
+        // onClick={ () => dispatch(_addPerson( {name: name.current} )) }
       >
         Add
       </button>

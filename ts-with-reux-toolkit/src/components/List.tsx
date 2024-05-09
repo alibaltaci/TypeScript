@@ -1,8 +1,8 @@
-import { useAppSelector } from "../store/hooks"
+import { usePerson } from "../store/features/personSlice/hooks"
 
 const List = () => {
 
-  const persons = useAppSelector(state => state.person.persons)
+  const persons = usePerson()
 
   return (
     <div>

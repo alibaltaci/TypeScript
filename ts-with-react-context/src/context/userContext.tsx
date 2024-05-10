@@ -19,7 +19,7 @@ const defaultState = {
         name: '',
         email: ''
     },
-    setUser: (user: User) => {console.log(user)}
+    setUser: () => {}
 } as IUserContext
 
 export const UserContext = createContext(defaultState)

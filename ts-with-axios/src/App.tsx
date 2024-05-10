@@ -1,3 +1,4 @@
+import axios from "axios"
 import { useEffect, useState } from "react"
 
 export type Crypto = {
@@ -31,15 +32,14 @@ export type Crypto = {
 
 function App() {
 
-  const [ cryptos, setCryptos ] = useState<Crypto[] | null>(null)
+  const [ cryptos, setCryptos ] = useState<Crypto[] | null >(null)
 
-  useEffect( () => {
+  useEffect(() => {
     const url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_ap_desc&per_page=100&page=1&sparkline=false'
-    fetch(url)
-    .then( response => response.json() )
-    .then( jsonData => setCryptos(jsonData) )
-    .catch( err => console.log(err))
-  
+
+    axios.get( url )
+    .then( response => setCryptos( response.data ))
+
   }, [])
 
   return (

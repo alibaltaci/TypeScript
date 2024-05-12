@@ -1,5 +1,5 @@
 import { TieFighter } from "./components/TieFighter"
-import { AwesomeContextProvider } from "./context/AwesomeContext"
+import { AwesomeContextProvider } from "./contexts/AwesomeContext"
 
 function App() {
 

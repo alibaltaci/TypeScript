@@ -1,7 +1,7 @@
-import { ChangeEvent, MouseEvent } from "react"
-import { useAnotherContext } from "../context/AnotherContext/hooks"
+import { ChangeEvent, MouseEvent, memo } from "react"
+import { useAnotherContext } from "../contexts/AnotherContext/hooks"
 
-export const LaserShot = () => {
+const LaserShot = () => {
 
     const { name, setName, inputValue, setInputValue } = useAnotherContext()
 
@@ -36,3 +36,5 @@ export const LaserShot = () => {
         
     )
 }
+
+export default memo(LaserShot)

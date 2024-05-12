@@ -1,4 +1,4 @@
-import { Dispatch, ReactNode, SetStateAction, createContext, useState } from "react";
+import { Dispatch, ReactNode, SetStateAction, createContext, useMemo, useState } from "react";
 
 type AnotherContextType = {
     name: string
@@ -19,8 +19,12 @@ export const AnotherContextProvider = ({children}: Props) => {
 
     const [inputValue, setInputValue] = useState("")
 
+    const memoizedContextValue = useMemo(() => (
+        {name, setName, inputValue, setInputValue}
+    ), [name, setName, inputValue, setInputValue])
+
     return(
-        <AnotherContext.Provider value={{name, setName, inputValue, setInputValue}}>
+        <AnotherContext.Provider value={ memoizedContextValue }>
             {children}
         </AnotherContext.Provider>
     )

@@ -1,6 +1,6 @@
-import { AnotherContextProvider } from "../context/AnotherContext"
-import { useAwesomeContext } from "../context/AwesomeContext/hooks"
-import { LaserShot } from "./LaserShot"
+import { AnotherContextProvider } from "../contexts/AnotherContext"
+import { useAwesomeContext } from "../contexts/AwesomeContext/hooks"
+import LaserShot from "./LaserShot"
 
 export const TieFighter = () => {
 
@@ -15,7 +15,7 @@ export const TieFighter = () => {
         <AnotherContextProvider>
             <p>TieFighter</p>
             <p>{ awesomeState }</p>
-            { awesomeState && <button onClick={ () => setAwesomeState( Math.random() ) }>Click Me!</button>}
+            <button onClick={ () => setAwesomeState( Math.random() ) }>Click Me!</button>
             <LaserShot />
         </AnotherContextProvider>
     )

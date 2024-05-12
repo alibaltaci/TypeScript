@@ -3,6 +3,8 @@ import { Dispatch, ReactNode, SetStateAction, createContext, useState } from "re
 type AnotherContextType = {
     name: string
     setName: Dispatch<SetStateAction<string>>
+    inputValue: string
+    setInputValue: Dispatch<SetStateAction<string>>
 }
 
 type Props = {
@@ -15,8 +17,10 @@ export const AnotherContextProvider = ({children}: Props) => {
 
     const [name, setName] = useState('ali')
 
+    const [inputValue, setInputValue] = useState("")
+
     return(
-        <AnotherContext.Provider value={{name, setName}}>
+        <AnotherContext.Provider value={{name, setName, inputValue, setInputValue}}>
             {children}
         </AnotherContext.Provider>
     )

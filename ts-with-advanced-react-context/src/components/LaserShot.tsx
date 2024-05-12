@@ -1,21 +1,20 @@
-import { ChangeEvent, MouseEvent, useRef } from "react"
+import { ChangeEvent, MouseEvent } from "react"
 import { useAnotherContext } from "../context/AnotherContext/hooks"
 
 export const LaserShot = () => {
 
-    const { name, setName } = useAnotherContext() || {}
+    const { name, setName, inputValue, setInputValue } = useAnotherContext()
 
     console.log("Render LaserShot")
 
-    const currentName = useRef<string>("")
-
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-        currentName.current = e.target.value      
+        setInputValue(e.target.value)       
     }
 
     const handleSubmit = (e: MouseEvent<HTMLButtonElement> ) => {
         e.preventDefault()
-        setName && setName(currentName.current)
+        setName(inputValue)
+        setInputValue("")
     }
     
     return(
@@ -25,6 +24,7 @@ export const LaserShot = () => {
             <label htmlFor="">Input Name</label>
             <input 
                 onChange={ handleChange }
+                value={ inputValue }
             />
             <button
                 onClick={ handleSubmit }

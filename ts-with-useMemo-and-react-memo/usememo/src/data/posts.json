@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "title": "React Hooks ile State Yönetimi",
+        "content": "React uygulamalarında state yönetimi oldukça önemlidir. State hook'ları kullanarak bileşenler arasında veri iletişimi sağlanabilir."
+      },
+      {
+        "id": 2,
+        "title": "JavaScript'te Arrow Fonksiyonları",
+        "content": "Arrow fonksiyonları, kısayolları ve daha okunaklı bir söz dizimine sahip olmalarıyla JavaScript kodunuzu geliştirmenin harika bir yoludur."
+      },
+      {
+        "id": 3,
+        "title": "Node.js ile RESTful API Geliştirme",
+        "content": "Node.js kullanarak RESTful API geliştirmek oldukça yaygındır. Express.js gibi çerçeveler kullanılarak basit ve güvenilir bir şekilde API'ler oluşturulabilir."
+      }  
+]

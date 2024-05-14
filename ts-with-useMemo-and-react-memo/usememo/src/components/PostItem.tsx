@@ -1,12 +1,10 @@
-import { useMemo, useState } from "react"
+import { useMemo } from "react"
 import { PostProps } from "../types"
+import ReactionComponent from "./ReactionComponent"
 
 const PostItem = ({post}:PostProps) => {
 
     console.log("PostItem render")
-
-    const [ like, setLike ] = useState(0)
-    const [ dislike, setDislike ] = useState(0)
 
     const { title, content } = post
 
@@ -25,12 +23,7 @@ const PostItem = ({post}:PostProps) => {
         <h2>{ title }</h2>
         <p>{ content }</p>
         <p>Keywords: {keywords.map(word => <span key={word}>{`#${word} `}</span>)}</p>
-        <div>
-            <span>Like: {like}</span>
-            <span>dislike: {dislike}</span>
-        </div>
-        <button onClick={() => setLike( like + 1) }>Like</button>
-        <button onClick={() => setDislike( dislike + 1) }>Dislike</button>
+        <ReactionComponent />
     </div>
   )
 }

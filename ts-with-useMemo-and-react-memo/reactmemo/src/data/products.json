@@ -1,0 +1,59 @@
+[
+    {
+        "id": 1,
+        "title": "Laptop",
+        "description": "Powerful laptop for work and gaming.",
+        "price": 999,
+        "image": "laptop.jpg",
+        "comments": [
+            {
+                "id": 1,
+                "user": "John",
+                "comment": "Great laptop, highly recommend it!"
+            },
+            {
+                "id": 2,
+                "user": "Alice",
+                "comment": "Good performance, but battery life could be better."
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Smartphone",
+        "description": "The latest smartphone with advanced features.",
+        "price": 599,
+        "image": "smartphone.jpg",
+        "comments": [
+            {
+                "id": 1,
+                "user": "Bob",
+                "comment": "Love the design and camera quality!"
+            },
+            {
+                "id": 2,
+                "user": "Eve",
+                "comment": "Fast delivery, thank you!"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Headphones",
+        "description": "High-quality headphones for immersive sound experience.",
+        "price": 199,
+        "image": "headphones.jpg",
+        "comments": [
+            {
+                "id": 1,
+                "user": "Charlie",
+                "comment": "Comfortable to wear for long periods."
+            },
+            {
+                "id": 2,
+                "user": "Grace",
+                "comment": "Excellent sound quality for the price."
+            }
+        ]
+    }
+]

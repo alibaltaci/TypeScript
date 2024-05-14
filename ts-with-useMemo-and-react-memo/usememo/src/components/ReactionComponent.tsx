@@ -13,8 +13,8 @@ const ReactionComponent = () => {
             <span>Like: {like}</span>
             <span>dislike: {dislike}</span>
         </div>
-        <button onClick={() => setLike( like + 1) }>Like</button>
-        <button onClick={() => setDislike( dislike + 1) }>Dislike</button>
+        <button onClick={() => setLike( (like) => like + 1) }>Like</button>
+        <button onClick={() => setDislike( (dislike) => dislike + 1) }>Dislike</button>
     </div>
   )
 }

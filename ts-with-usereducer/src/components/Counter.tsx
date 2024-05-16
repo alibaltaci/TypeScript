@@ -35,6 +35,8 @@ const Counter = ( {children}: ICounter ) => {
             <button onClick={ increment }>+</button>    
             <button onClick={ decrement }>-</button>    
         </div>   
+        <input type="text" onChange={ handleTextInput } />
+        <h2>{ state.text }</h2>
     </>
   )
 }

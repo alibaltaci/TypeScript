@@ -19,7 +19,7 @@ export const reducer = ( state: typeof initState, action: ReducerAction): typeof
         case REDUCER_ACTION_TYPE.DECREMENT:
             return { ...state, count: state.count - 1}
         case REDUCER_ACTION_TYPE.NEW_INPUT:
-            return { ...state, text: action.payload }
+            return { ...state, text: action.payload ?? ''}
         default:
             throw new Error()
     }

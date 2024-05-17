@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-      <CounterProvider count={initState.count} text={initState.text}>
+      <CounterProvider>
         <Counter>
           { (num: number) => <>Current Count: {num}</> }
         </Counter>

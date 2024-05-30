@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const Form = () => {
+const TraditionalForm = () => {
 
   const [ email, setEmail ] = useState("")
   const [ password, setPassword ] = useState("")
@@ -72,4 +72,4 @@ const Form = () => {
   )
 }
 
-export default Form
+export default TraditionalForm
